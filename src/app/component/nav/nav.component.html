@@ -1,0 +1,25 @@
+<nav class="navbar">
+    <a class="navbar__logo" routerLink="/">
+        Inicio
+    </a>
+    <div class="navbar__menu-container">
+        <ul class="navbar__menu-list">
+            <li class="navbar__menu-item">
+                <a class="navbar__link" routerLink="/product" routerLinkActive="navbar__link--active">Productos</a>
+            </li>
+            <li class="navbar__menu-item" *ngIf="isAdmin">
+                <a class="navbar__link " routerLink="/user" routerLinkActive="navbar__link--active">Usuarios</a>
+            </li>
+            <li class="navbar__menu-item">
+                <button class="navbar__button">{{name}}</button>
+                <div class="navbar__submenu-container">
+                    <ul class="navbar__submenu-list">
+                        <li class="navbar__submenu-item">
+                            <a class="navbar__link" (click)="logout()">Cerrar sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>

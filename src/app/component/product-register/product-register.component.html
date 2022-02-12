@@ -1,0 +1,41 @@
+<main class="main-contenedor">
+    <div class="form">
+        <form action="" [formGroup]="form" (submit)="submit()">
+            <h1 class="form__tittle">
+                {{id==null? 'Agregar nuevo producto': 'Editar producto'}}
+            </h1>
+            <div class="form__campos">
+                <label for="id" class="form__campo" *ngIf="id!=null">
+                    <span>Id del producto</span>
+                    <input formControlName="id"  type="text" name="id" id="id" class="form__input"
+                        placeholder="ID"  >
+                </label>
+                <label for="name" class="form__campo">
+                    <span>Nombre del producto</span>
+                    <input  formControlName="name" type="text" name="name" id="name" class="form__input"
+                        placeholder="Nombre" required>
+                </label>
+                <label for="price" class="form__campo">
+                    <span>Precio del producto</span>
+                    <input formControlName="price" type="number" name="price" id="price" class="form__input"
+                        placeholder="Precio" required>
+                </label>
+
+                <label for="description" class="form__campo form__campo--entero">
+                    <span>Precio del producto</span>
+                    <input formControlName="description" type="text" name="description" id="description" class="form__input"
+                        placeholder="Descripción" required>
+                </label>
+
+            </div>
+
+            <footer class="form_footer">
+                <a class="form__delete" *ngIf="id!=null" (click)="borrar()">Borrar</a>
+                <a class="form__cancel" (click)="cancelar()">Cancelar</a>
+                <button type="submit" class="form__submit">{{id==null? 'Agregar': 'Editar'}}</button>
+            </footer>
+
+
+        </form>
+    </div>
+</main>

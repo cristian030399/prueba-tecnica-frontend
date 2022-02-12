@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+:root {
+    --blue-color: #36a3de;
+    --blue-color2: #297DAB;
+    --blue-color3: rgba(54, 163, 222, 0.6);
+    --white-color: #ededed;
+    --text-color: #2d2d2d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(54, 163, 222, 0.03);
+    color: var(--text-color);
+}
+
+a {
+    cursor: pointer;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.main-contenedor {
+    width: 80%;
+    max-width: 1500px;
+    margin: auto;
+    padding: 3% 0;
+}

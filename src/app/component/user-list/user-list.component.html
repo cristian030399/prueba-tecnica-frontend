@@ -1,0 +1,43 @@
+<main class="main-contenedor">
+    <header class="header">
+        <h1>Usuarios</h1>
+
+        <a routerLink="/user/register" class="boton boton--agregar">
+            <i class="bi bi-plus-circle"></i>
+            <span class="boton__texto">
+                Añadir
+            </span>
+        </a>
+    </header>
+
+    <section class="usuarios">
+        <article class="usuario" *ngFor="let usuario of usuarios; let idx = index">
+            <main class="usuario__body">
+                <div class="usuario__contenido-visible">
+                    <h2>{{usuario.name}} {{usuario.lastname}}</h2>
+                    <p>Rol: {{usuario.role}}</p>
+                    <p>Id: {{usuario.id}}</p>
+
+                </div>
+                <div class="usuario__contenido-no-visible">
+                    <p>Email: {{usuario.email}}</p>
+                    <p>Dirección: {{usuario.direction}}</p>
+
+                    <footer class="usuario__footer">
+                        <a routerLink="/user/edit/{{usuario.id}}" class="boton boton--editar">
+                            <i class="bi bi-pencil"></i>
+                            <span class="boton__texto">
+                                Editar
+                            </span>
+                        </a>
+                    </footer>
+                </div>
+
+            </main>
+            <button class="usuario__boton-detalles" (click)="mostrarDetalles(idx +1)">
+                <!-- <i class="bi bi-chevron-down"></i> -->
+            </button>
+        </article>
+
+    </section>
+</main>

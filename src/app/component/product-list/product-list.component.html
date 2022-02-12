@@ -1,0 +1,42 @@
+<main class="main-contenedor">
+    <header class="header">
+        <h1>Productos</h1>
+
+        <a routerLink="/product/register" class="boton boton--agregar">
+            <i class="bi bi-plus-circle"></i>
+            <span class="boton__texto">
+                Añadir
+            </span>
+        </a>
+    </header>
+
+    <section class="productos">
+        <article class="producto" *ngFor="let producto of productos; let idx = index">
+            <main class="producto__body">
+                <div class="producto__contenido-visible">
+                    <h2>{{producto.name}}</h2>
+                    <p>Id: {{producto.id}}</p>
+                    <p>{{producto.price | currency}}</p>
+
+                </div>
+                <div class="producto__contenido-no-visible">
+                    <p>{{producto.description}}</p>
+
+                    <footer class="producto__footer">
+                        <a routerLink="/product/edit/{{producto.id}}" class="boton boton--editar">
+                            <i class="bi bi-pencil"></i>
+                            <span class="boton__texto">
+                                Editar
+                            </span>
+                        </a>
+                    </footer>
+                </div>
+
+            </main>
+            <button class="producto__boton-detalles" (click)="mostrarDetalles(idx +1)">
+                <!-- <i class="bi bi-chevron-down"></i> -->
+            </button>
+        </article>
+
+    </section>
+</main>

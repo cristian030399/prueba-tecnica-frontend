@@ -1,0 +1,61 @@
+<main class="main-contenedor">
+    <div class="form">
+        <form action="" [formGroup]="form" (submit)="submit()" *ngIf="showForm">
+            <h1 class="form__tittle">
+                {{id==null? 'Registrar nuevo usuario': 'Editar usuario'}}
+            </h1>
+            <div class="form__campos">
+                <label for="id" class="form__campo">
+                    <span>Identificación</span>
+                    <input formControlName="id" type="number" name="id" id="id" class="form__input" placeholder="ID">
+                </label>
+                <label for="email" class="form__campo">
+                    <span>Correo electrónico</span>
+                    <input formControlName="email" type="email" name="email" id="email" class="form__input"
+                        placeholder="Correo electrónico" required>
+                </label>
+                <label for="password" class="form__campo" *ngIf="!id">
+                    <span>Contraseña</span>
+                    <input formControlName="password" type="password" name="password" id="password" class="form__input"
+                        placeholder="Contraseña" required>
+                </label>
+                <label for="name" class="form__campo">
+                    <span>Nombre</span>
+                    <input formControlName="name" type="text" name="name" id="name" class="form__input"
+                        placeholder="Nombre" required>
+                </label>
+                <label for="lastname" class="form__campo">
+                    <span>Apellido</span>
+                    <input formControlName="lastname" type="text" name="lastname" id="lastname" class="form__input"
+                        placeholder="Apellido" required>
+                </label>
+                <label for="direction" class="form__campo">
+                    <span>Dirección</span>
+                    <input formControlName="direction" type="text" name="direction" id="direction" class="form__input"
+                        placeholder="Dirección" required>
+                </label>
+
+                <label for="role" class="form__campo form__campo--entero">
+                    <span>Rol</span>
+                    <select formControlName="role" name="Role" id="Role" class="form__input">
+                        <option [ngValue]="'empleado'">
+                            Empleado
+                        </option>}
+                        <option [ngValue]="'administrador'">
+                            Administrador
+                        </option>
+                    </select>
+                </label>
+
+            </div>
+
+            <footer class="form_footer">
+                <a class="form__delete" *ngIf="id!=null" (click)="borrar()">Borrar</a>
+                <a class="form__cancel" (click)="cancelar()">Cancelar</a>
+                <button type="submit" class="form__submit">{{id==null? 'Agregar': 'Editar'}}</button>
+            </footer>
+
+
+        </form>
+    </div>
+</main>

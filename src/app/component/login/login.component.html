@@ -1,0 +1,18 @@
+<main class="form-signin">
+    <div class="form">
+        <div class="form__ico">
+            <i class="bi bi-person"></i>
+        </div>
+        <form action="" [formGroup]="form" (submit)="submit()">
+            <h1 class="form__tittle">
+                Acceder
+            </h1>
+
+            <input formControlName="email" type="email" name="" id="" class="form__input" placeholder="Correo electrónico" required>
+
+            <input formControlName="password" type="password" name="" id="" class="form__input" placeholder="Contraseña" required>
+
+            <button type="submit" class="form__submit">Iniciar sesión</button>
+        </form>
+    </div>
+</main>
