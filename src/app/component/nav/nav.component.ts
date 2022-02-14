@@ -29,7 +29,7 @@ export class NavComponent implements OnInit {
     this.userService.getInfo().subscribe((data:any) => {
       if(data.hasOwnProperty('user')) {
         this.name = data.user.name;
-        this.isAdmin = data.user.role == 'administrador'? true: false;
+        this.isAdmin = data.user.role == 'Administrador'? true: false;
       } else {
         alert('Ocurrió un problema, por favor vuelva a iniciar sesión');
         this.logout();

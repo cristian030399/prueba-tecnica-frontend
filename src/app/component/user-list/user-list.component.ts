@@ -28,7 +28,7 @@ export class UserListComponent implements OnInit {
   getUserInfo() {
     this.userService.getInfo().subscribe((data:any) => {
       if(data.hasOwnProperty('user')) {
-        if(data.user.role != 'administrador') {
+        if(data.user.role != 'Administrador') {
           this.router.navigate(['/']);
         } else {
           this.getUsers();
